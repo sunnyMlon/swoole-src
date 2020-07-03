@@ -41,116 +41,17 @@ if(CODE_COVERAGE)
     endif()
 endif(CODE_COVERAGE)
 
-set(libswoole_sources_core
-    core/base.cc
-    core/error.cc
-    core/log.cc
-    core/string.cc
-    core/channel.cc
-    core/hashmap.cc
-    core/heap.cc
-    core/ring_queue.cc
-    core/timer.cc
-)
-
-set(libswoole_sources_coroutine
-    coroutine/base.cc
-    coroutine/channel.cc
-    coroutine/context.cc
-    coroutine/file_lock.cc
-    coroutine/hook.cc
-    coroutine/socket.cc
-    coroutine/system.cc
-    coroutine/thread_context.cc
-)
-
-set(libswoole_sources_lock
-    lock/atomic.cc
-    lock/cond.cc
-    lock/file_lock.cc
-    lock/mutex.cc
-    lock/rw_lock.cc
-    lock/semaphore.cc
-    lock/spin_lock.cc
-)
-
-set(libswoole_sources_memory
-    memory/buffer.cc
-    memory/fixed_pool.cc
-    memory/global_memory.cc
-    memory/malloc.cc
-    memory/ring_buffer.cc
-    memory/shared_memory.cc
-    memory/table.cc
-)
-
-set(libswoole_sources_network
-    network/client.cc
-    network/dns.cc
-    network/socket.cc
-    network/stream.cc
-)
-
-set(libswoole_sources_os
-    os/async_thread.cc
-    os/base.cc
-    os/msg_queue.cc
-    os/process_pool.cc
-    os/sendfile.cc
-    os/signal.cc
-    os/thread_pool.cc
-    os/timer.cc
-    os/wait.cc
-)
-
-set(libswoole_sources_pipe
-    pipe/base.cc
-    pipe/eventfd.cc
-    pipe/unix_socket.cc
-)
-
-set(libswoole_sources_protocol
-    protocol/base.cc
-    protocol/base64.cc
-    protocol/dtls.cc
-    protocol/http.cc
-    protocol/http2.cc
-    protocol/mime_type.cc
-    protocol/mqtt.cc
-    protocol/redis.cc
-    protocol/sha1.cc
-    protocol/socks5.cc
-    protocol/ssl.cc
-    protocol/websocket.cc
-)
-
-set(libswoole_sources_reactor
-    reactor/base.cc
-    reactor/epoll.cc
-    reactor/kqueue.cc
-    reactor/poll.cc
-    reactor/select.cc
-)
-
-set(libswoole_sources_server
-    server/base.cc
-    server/manager.cc
-    server/master.cc
-    server/port.cc
-    server/process.cc
-    server/reactor_process.cc
-    server/reactor_thread.cc
-    server/static_handler.cc
-    server/task_worker.cc
-    server/worker.cc
-)
-
-set(libswoole_sources_wrapper
-    wrapper/event.cc
-    wrapper/server.cc
-    wrapper/timer.cc
-)
-
+file(GLOB libswoole_sources_core core/*.cc)
+file(GLOB libswoole_sources_coroutine coroutine/*.cc)
+file(GLOB libswoole_sources_lock lock/*.cc)
+file(GLOB libswoole_sources_memory memory/*.cc)
+file(GLOB libswoole_sources_network network/*.cc)
+file(GLOB libswoole_sources_os os/*.cc)
+file(GLOB libswoole_sources_pipe pipe/*.cc)
+file(GLOB libswoole_sources_protocol protocol/*.cc)
+file(GLOB libswoole_sources_reactor reactor/*.cc)
+file(GLOB libswoole_sources_server server/*.cc)
+file(GLOB libswoole_sources_wrapper server/*.cc)
 set(libswoole_sources_thirdparty
     ${libswoole_thirdparty_dir}/boost/asm/combined.S
 )

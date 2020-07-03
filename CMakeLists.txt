@@ -117,5 +117,4 @@ message(STATUS "summary of build options:
 #install
 INSTALL(CODE "MESSAGE(\"Are you run command using root user?\")")
 INSTALL(TARGETS ext-swoole LIBRARY DESTINATION ${PHP_EXTENSION_DIR})
-INSTALL(TARGETS lib-swoole LIBRARY DESTINATION lib ARCHIVE DESTINATION lib)
 INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/config.h DESTINATION include/swoole)
